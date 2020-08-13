@@ -12,12 +12,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const usersHandlers = users({ axios });
+
 app.get('/', usersHandlers.get)
-
 app.post('/', usersHandlers.post);
-
 app.put('/:id', usersHandlers.put);
-
 app.delete('/:id', usersHandlers.delete);
 
 app.listen(port, () => {
